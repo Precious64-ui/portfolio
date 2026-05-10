@@ -2,231 +2,224 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<>, initial-scale=1.0">
-    <title>Document</title>
-     <link href="fontawesome/css/all.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precious Iwuchukwu | Frontend Developer</title>
+    <!-- Use CDN if local path fails: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css -->
+    <link href="fontawesome/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo">Precious <span> Pixel</span></div>
-        <ul class="nav-links">
+        <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+        
+        <ul class="nav-links" id="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Works</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
         <div class="nav-auth">
             <a href="#contact" class="btn-connect">Connect</a>
         </div>
-
-
     </nav>
 
- <section id="home" class="home">
-    <div class="hero-text"> <!-- Added 'class=' here -->
-        <h1>Precious Iwuchukwu</h1>
-        <h2>Frontend Developer</h2>
-        <p>
-            I’m a frontend developer turning designs into responsive, user-friendly web experiences with HTML, CSS, and JavaScript.
-        </p>
-        
-        <ul class="social-media"> <!-- Use ul for lists -->
-             <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-             <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-             <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-             <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-             <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
-        </ul>
-    </div>
+    <!-- HERO SECTION -->
+    <section id="home" class="home">
+        <div class="hero-text">
+            <h1>Precious Iwuchukwu</h1>
+            <h2>Frontend Developer</h2>
+            <p>
+                I’m a frontend developer turning designs into responsive, user-friendly web experiences with HTML, CSS, and JavaScript.
+            </p>
 
-    <div class="hero-img">
-        <img src="Gemini_Generated_Image_xni239xni239xni2.png" alt="coder">
-    </div>
-</section>
+            <a href="#portfolio" class="btn-work">View My Work</a>
+            
+            <ul class="social-media">
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://github.com/Precious64-ui" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+            </ul>
+        </div>
 
+        <div class="hero-img">
+            <img src="Gemini_Generated_Image_xni239xni239xni2.png" alt="coder">
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
     <section id="about" class="about">
-    <div class="about-container">
-        <div class="about-img">
-            <!-- Ensure your image path is correct -->
-            <img src="cartoon-man-wearing-glasses.jpg" alt="Precious Iwuchukwu - Frontend Developer">
+        <div class="about-container">
+            <div class="about-img">
+                <img src="cartoon-man-wearing-glasses.jpg" alt="Precious Iwuchukwu">
+            </div>
+            <div class="about-text">
+                <h2 class="section-title">Brief About Me</h2>
+                <p>
+                    I focus on creating simple, functional interfaces that look good and feel right on any device. From fixing layout bugs to building landing pages from scratch, I care about the details.
+                </p>
+                <p>
+                    My goal is to bridge the gap between complex code and intuitive user experiences.
+                </p>
+            </div>
         </div>
-        <div class="about-text">
-            <h2 class="section-title">Brief About Me</h2>
-            <p>
-                I focus on creating simple, functional interfaces that look good and feel right on any device. From fixing layout bugs to building landing pages from scratch, I care about the details that make a site feel polished.
-            </p>
-            <p>
-                My goal is to bridge the gap between complex code and intuitive user experiences, ensuring every project I touch is both performant and visually engaging.
-            </p>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- SKILLS SECTION -->
-   <section id="skills" class="skills">
-    <div class="container">
-        <h2 class="section-title">My Skills</h2>
-        <div class="skills-grid">
-            <!-- Skill 1 -->
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="WhatsApp Image 2026-05-09 at 11.32.50 PM.jpeg" alt="HTML/CSS">
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+                    <div class="skill-info">
+                        <h3>HTML & CSS</h3>
+                        <p>Semantic markup, Flexbox, Grid, and responsive layouts.</p>
+                    </div>
                 </div>
-                <div class="skill-info">
-                    <h3>HTML & CSS</h3>
-                    <p>Semantic markup, Flexbox, Grid, and responsive layouts.</p>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+                    <div class="skill-info">
+                        <h3>JavaScript</h3>
+                        <p>DOM manipulation, ES6+, and interactive UI components.</p>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Skill 2 -->
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="3d-rendered-javascript-file-icon_84443-57055.avif" alt="JS">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-palette"></i></div>
+                    <div class="skill-info">
+                        <h3>UI Styling</h3>
+                        <p>Tailwind CSS, modern CSS animations, and design systems.</p>
+                    </div>
                 </div>
-                <div class="skill-info">
-                    <h3>JavaScript</h3>
-                    <p>DOM manipulation, ES6+, and interactive UI components.</p>
-                </div>
-            </div>
-
-            <!-- Skill 3 -->
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="development-web-site-with-css-code-creation-style-sheet-improve-website_671359-198.jpg" alt="UI Styling">
-                </div>
-                <div class="skill-info">
-                    <h3>UI Styling</h3>
-                    <p>Tailwind CSS, modern CSS animations, and design systems.</p>
-                </div>
-            </div>
-
-            <!-- Skill 4 -->
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                </div>
-                <div class="skill-info">
-                    <h3>Tools</h3>
-                    <p>Git, GitHub, VS Code, and Figma to Code conversion.</p>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <div class="skill-info">
+                        <h3>Tools</h3>
+                        <p>Git, GitHub, VS Code, and Figma to Code conversion.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="services" class="services">
-    <div class="container">
-        <h2 class="section-title">My Services</h2>
-        <div class="services-grid">
-            <!-- Service 1 -->
-            <div class="service-card">
-                <div class="service-icon">
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">My Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
                     <i class="fa-solid fa-code"></i>
+                    <h3>Website Development</h3>
+                    <p>Turning designs into fast, responsive websites using modern tech.</p>
                 </div>
-                <h3>Website Development</h3>
-                <p>
-                    Turning designs into fast, responsive, and high-performing websites using modern HTML, CSS, and JavaScript.
-                </p>
-            </div>
-
-            <!-- Service 2 -->
-            <div class="service-card">
-                <div class="service-icon">
+                <div class="service-card">
                     <i class="fa-solid fa-mobile-screen-button"></i>
+                    <h3>UI/UX Implementation</h3>
+                    <p>Ensuring a great user experience across mobile and desktop.</p>
                 </div>
-                <h3>UI/UX Implementation</h3>
-                <p>
-                    Creating clean layouts and smooth interactions that ensure a great user experience across mobile and desktop.
-                </p>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="service-card">
-                <div class="service-icon">
+                <div class="service-card">
                     <i class="fa-solid fa-bug-slash"></i>
-                </div>
-                <h3>Fixes & Optimization</h3>
-                <p>
-                    Debugging layout issues, improving load speeds, and ensuring cross-browser compatibility for a polished finish.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-   <section id="contact" class="contact">
-    <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-wrapper">
-            
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <h3>Let's talk about your project</h3>
-                <p>I'm currently available for internships and freelance projects. If you have a question or just want to say hi, I’ll try my best to get back to you!</p>
-                
-                <div class="info-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>iwuchukwuprecious64@gmail.com</span>
-                </div>
-                <div class="info-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Nigeria</span>
+                    <h3>Fixes & Optimization</h3>
+                    <p>Debugging layout issues and improving load speeds.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Contact Form -->
-            <form action="#" method="POST" class="contact-form">
-                <div class="input-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">My Works</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <img src="Screenshot 2026-05-10 094512.jpg" alt="Salon Website">
+                    <div class="portfolio-info">
+                        <h3>Salon Booking Site</h3>
+                        <p>A stylish booking platform for beauty salons.</p>
+                        <a href="https://github.com/Precious64-ui/Salon-gallery-web" target="_blank">View Project</a>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="@example.com" required>
+                <div class="portfolio-card">
+                    <img src="Screenshot 2026-05-10 094219.jpg" alt="Bean & Brew">
+                    <div class="portfolio-info">
+                        <h3>Bean & Brew</h3>
+                        <p>Coffee brand landing page with high conversion.</p>
+                        <a href="https://github.com/Precious64-ui/Bean-Brew" target="_blank">View Project</a>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="message">Your message</label>
-                    <textarea name="message" id="message" placeholder="How can I help you?" rows="5" required></textarea>
+                <div class="portfolio-card">
+                    <img src="Screenshot 2026-05-10 09473.jpg" alt="Veloura Scents">
+                    <div class="portfolio-info">
+                        <h3>Veloura Scents</h3>
+                        <p>Luxury fragrance brand landing page design.</p>
+                        <a href="https://github.com/Precious64-ui/new-project" target="_blank">View Project</a>
+                    </div>
                 </div>
-                <button type="submit" class="btn-submit">Send Message</button>
-            </form>
-
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-   <!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-logo">
-            Precious<span> Pixel</span>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Let's talk about your project</h3>
+                    <p>I'm currently available for internships and freelance projects.</p>
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>iwuchukwuprecious64@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Nigeria</span>
+                    </div>
+                </div>
+                <form action="#" method="POST" class="contact-form">
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Your message</label>
+                        <textarea name="message" id="message" placeholder="How can I help you?" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
         </div>
-        
-        <ul class="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    </section>
 
-        <div class="footer-socials">
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">Precious<span> Pixel</span></div>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="footer-bottom">
+                <small>&copy; 2026 Precious Pixel. All rights reserved.</small>
+            </div>
         </div>
+    </footer>
 
-        <div class="footer-bottom">
-            <small>&copy; 2026 Precious Pixel. All rights reserved.</small>
-        </div>
-    </div>
-</footer>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>

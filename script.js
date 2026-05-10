@@ -1,31 +1,40 @@
-
-    // 1. Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelector('.nav-links');
-    
-    // Create hamburger button dynamically
-    const hamburger = document.createElement('div');
-    hamburger.classList.add('hamburger');
-    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    navbar.insertBefore(hamburger, navLinks);
+    const hamburger = document.querySelector('#hamburger');
+    const navLinks = document.querySelector('#nav-links');
+    const links = document.querySelectorAll('.nav-links a');
 
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-active-mobile');
-        hamburger.innerHTML = navLinks.classList.contains('nav-active-mobile') 
-            ? '<i class="fa-solid fa-xmark"></i>' 
-            : '<i class="fa-solid fa-bars"></i>';
-    });
+    // --- 1. MOBILE MENU TOGGLE ---
+    // Handles opening and closing the sidebar on mobile
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Swap icons between bars and X
+            const icon = hamburger.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-xmark');
+            }
+        });
+    }
 
-    // Close menu when a link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    // Close mobile menu automatically when a link is clicked
+    links.forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.remove('nav-active-mobile');
-            hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            navLinks.classList.remove('active');
+            const icon = hamburger?.querySelector('i');
+            if (icon) {
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            }
         });
     });
 
-    // 2. Sticky Navbar Effect
+
+    // --- 2. STICKY NAVBAR EFFECT ---
     window.addEventListener('scroll', () => {
+        // Adds 'nav-scrolled' class after 50px of scrolling
         if (window.scrollY > 50) {
             navbar.classList.add('nav-scrolled');
         } else {
@@ -33,33 +42,52 @@
         }
     });
 
-    // 3. Smooth Scrolling
+
+    // --- 3. SMOOTH SCROLLING ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
+            const targetId = this.getAttribute('href');
+            if (targetId === "#") return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                
+                const navHeight = navbar.offsetHeight;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
                 window.scrollTo({
-                    top: target.offsetTop - 80,
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
             }
         });
     });
 
-    // 4. Scroll Reveal Animation
+
+    // --- 4. SCROLL REVEAL ANIMATION ---
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px" // Triggers slightly before element hits viewport
+    };
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = "1";
                 entry.target.style.transform = "translateY(0)";
+                // Cleanup: stop watching once revealed
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, observerOptions);
 
+    // Set initial state for all sections and start observing
     document.querySelectorAll('section').forEach(section => {
         section.style.opacity = "0";
         section.style.transform = "translateY(40px)";
-        section.style.transition = "all 0.8s ease-out";
+        section.style.transition = "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
         observer.observe(section);
     });
+});
