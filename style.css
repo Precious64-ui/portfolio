@@ -397,14 +397,45 @@ section {
 
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
+        padding: 15px 5%;
+        flex-direction: row; /* Keep Logo and Hamburger on one line */
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: block; /* Show the icon */
+        order: 2;
+    }
+
+    .logo {
+        order: 1;
     }
 
     .nav-links {
-        gap: 15px;
-        font-size: 0.9rem;
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Move off-screen to the right */
+        height: 100vh;
+        width: 70%;
+        background: #0a0f1c; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: 0.4s ease-in-out;
+        z-index: 1000;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    }
+
+    /* When JS adds the .active class */
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Hide the "Connect" button on mobile or move it inside the menu */
+    .btn-connect {
+        display: none; 
     }
 
     .home {
