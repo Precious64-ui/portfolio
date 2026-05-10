@@ -46,6 +46,7 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     white-space: nowrap;
+    flex: 1; /* Pushes menu to center */
 }
 
 .logo span {
@@ -56,6 +57,8 @@ body {
     display: flex;
     gap: 30px;
     list-style: none;
+    flex: 2; /* Keeps menu centered */
+    justify-content: center;
 }
 
 .nav-links a {
@@ -67,6 +70,22 @@ body {
 
 .nav-links a:hover {
     color: var(--primary);
+}
+
+/* HAMBURGER (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: var(--text);
+    z-index: 2001;
+}
+
+/* RIGHT SECTION (Button Area) */
+.nav-right {
+    flex: 1; /* Balances the logo on the left */
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* BUTTON */
@@ -398,62 +417,51 @@ section {
 @media (max-width: 768px) {
     .navbar {
         padding: 15px 5%;
-        flex-direction: row; /* Keep Logo and Hamburger on one line */
+        flex-direction: row; 
         justify-content: space-between;
     }
 
     .hamburger {
-        display: block; /* Show the icon */
-        order: 2;
+        display: block; /* Shows on phone */
     }
 
-    .logo {
-        order: 1;
+    .nav-right {
+        display: none; /* Hides "Connect" area on phone */
     }
 
     .nav-links {
         display: flex;
         position: fixed;
         top: 0;
-        right: -100%; /* Move off-screen to the right */
+        right: -100%; /* Start hidden */
         height: 100vh;
-        width: 70%;
-        background: #0a0f1c; 
+        width: 75%;
+        background: rgba(10, 15, 28, 0.98); 
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 30px;
+        gap: 40px;
         transition: 0.4s ease-in-out;
-        z-index: 1000;
+        z-index: 2000;
         box-shadow: -10px 0 30px rgba(0,0,0,0.5);
     }
 
-    /* When JS adds the .active class */
     .nav-links.active {
-        right: 0;
+        right: 0; /* Slide in! */
     }
 
-    /* Hide the "Connect" button on mobile or move it inside the menu */
-    .btn-connect {
-        display: none; 
-    }
-
+    /* Stack sections for mobile */
     .home {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 60px;
+        padding-top: 100px;
     }
 
-    .about-container {
+    .about-container, .contact-wrapper {
         flex-direction: column;
         text-align: center;
-    }
-
-    .contact-wrapper {
-        flex-direction: column;
     }
 
     .hero-text h1 { font-size: 2.5rem; }
     .hero-img img { width: 280px; }
-    .social-media { justify-content: center; }
 }
